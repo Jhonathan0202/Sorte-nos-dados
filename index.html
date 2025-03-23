@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que role os dados</title>
+    <meta name="author" content="Jhonathan Da Costa Mariano">
+    <meta name="description" content="Quem não gosta de rolar os dados sozinho?... É isso é só um tabalho para escola">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Que role os dados</h1>
+    </header>
+    <div id="warning">
+        <div>
+            <h2>Aviso</h2>
+            <button id="closeWarning">x</button>
+            <p>
+                Se você jogou esse jogo bobo mais de três vezes ou passou mais de três minutos nele, é recomendável dar uma volta na rua ou até considerar uma visita ao psicólogo.
+            </p>
+        </div>
+    </div>
+    <main>
+        <div id="rules">
+            <h2>
+                Regras do jogo
+            </h2>
+            <button id="closeRules">x</button>
+            <ul>
+                <li>Para ganhar você deve tirar um valor no dado maior que seu adversário</li>
+                <li>Caso você tire o mesmo valor que seu adversário será empate</li>
+                <li>Se seu adversário tirar um valor mais alto no dado ele ira ganhar</li>
+            </ul>
+        </div>
+        <p>
+            O jogo não é tão divertido então não reclame se não gostar<span class="secret">, neste site não colocamos o footer fora do body.</span>
+        </p>
+        <div id="game">
+            <div id="gameStatus">
+                <p id="youWin">
+                    Você ganhou: 0 vezes
+                </p>
+                <p id="youLose">
+                    Você perdeu: 0 vezes
+                </p>
+            </div>
+            <div id="dice">
+                <div id="p1Die">
+                    <img src="imgs/dice1.png" alt="Dado com o lado 1">
+                    <p>Player 1 (Computador)</p>
+                </div>
+                <p>
+                    VS
+                </p>
+                <div id="p2Die">
+                    <img src="imgs/dice2.png" alt="Dado com o lado 2">
+                    <p>Player 2 (Você)</p>
+                </div>
+            </div>
+            <div id="gameResults">
+                <p>Você venceu! Parabéns!</p>
+            </div>
+        </div>
+
+        <button id="roll">
+            Rolar os dados
+        </button>
+    </main>
+    <div id="divCookie">
+        <p>
+            Este site utiliza cookies para melhorar a sua experiência e porque eu tinha tempo livre, ao clicar em "Aceitar" você está concordando na utilização dos cookies
+        </p>
+        <div id="btnsCookie">
+            <button id="cookieReject">
+                Recusar
+            </button>
+            <button id="cookieAccept">
+                Aceitar
+            </button>
+        </div>
+    </div>
+    <footer>
+        <p>
+            Este site foi criado no intuito de replicar um jogo criado em uma aula do
+            <div class="tooltip">
+                Daniel
+                <span class="tooltipText">
+                    Professor de soluções computacionais da Ânima
+                </span>
+            </div>
+        </p>
+    </footer>
+</body>
+</html>
