@@ -300,8 +300,15 @@ footer{
     margin-top: 13px;
     background-color: var(--blue-black);
     color: white;
+    width: 100%;
     padding: 8px 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer > p{
+    display: inline-block;
 }
 
 div.tooltip{
