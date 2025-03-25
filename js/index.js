@@ -6,6 +6,17 @@ let fails = 0;
 let plays = 4;
 let btnRoll = document.querySelector("button#roll");
 
+function fixFooter(){
+    let footer = document.querySelector("footer");
+    if((document.body.offsetHeight - footer.offsetHeight) < window.innerHeight){
+        footer.style.position = "absolute";
+        footer.style.bottom = "0px";
+    } else{
+        footer.style.removeProperty("position");
+        footer.style.removeProperty("bottom");
+    }
+}
+
 function getCookie(cName){
     let arrayCookies = decodeURIComponent(document.cookie).split(";");
     let result = "";
@@ -52,6 +63,7 @@ function setCookie(cName, cValue, exDays){
 }
 
 window.addEventListener("load", ()=>{
+    fixFooter();
     let userStatus = getCookie("plays");
     if(userStatus != ""){
         wins = Number(JSON.parse(userStatus)["win"]);
@@ -63,6 +75,8 @@ window.addEventListener("load", ()=>{
         document.querySelector("div#divCookie").style.display = "block";
     }
 });
+
+window.addEventListener("resize", ()=>{fixFooter()});
 
 document.querySelector("button#cookieAccept").addEventListener("click", ()=>{
     let initPlay = {
