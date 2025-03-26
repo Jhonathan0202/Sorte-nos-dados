@@ -301,7 +301,6 @@ footer{
     background-color: var(--blue-black);
     color: white;
     width: 100%;
-    overflow: hidden;
     padding: 8px 5px;
     text-align: center;
     display: flex;
@@ -320,13 +319,13 @@ div.tooltip{
 }
 
 div.tooltip:hover span.tooltipText{
-    visibility: visible;
+    display: inline-block;
     opacity: 1;
 }
 
 div.tooltip > span.tooltipText{
-    visibility: hidden;
     position: absolute;
+    display: none;
     cursor: default;
     text-decoration: none;
     background-color: #070707e0;
