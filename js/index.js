@@ -3,7 +3,7 @@
 let freeCookies = false;
 let wins = 0;
 let fails = 0;
-let plays = 4;
+let plays = 0;
 let btnRoll = document.querySelector("button#roll");
 
 function fixFooter(){
@@ -50,7 +50,7 @@ function gameStatus(w, f){
         let playsUpdate = {
             "win": String(wins),
             "lose": String(fails),
-            "plays": String(wins + fails)
+            "plays": String(plays)
         };
         setCookie("plays", JSON.stringify(playsUpdate), 7);
     }
@@ -82,12 +82,11 @@ document.querySelector("button#cookieAccept").addEventListener("click", ()=>{
     let initPlay = {
         "win": String(wins),
         "lose": String(fails),
-        "plays": String(wins + fails)
+        "plays": String(plays)
     };
     wins = Number(JSON.stringify(initPlay)["win"]) + wins;
     fails = Number(JSON.stringify(initPlay)["lose"]) + fails;
     plays = Number(JSON.stringify(initPlay)["plays"]) + plays;
-    plays = fails + plays;
     document.querySelector("div#divCookie").style.display = "none";
     setCookie("plays", JSON.stringify(initPlay), 7);
     location.reload();
@@ -143,7 +142,7 @@ btnRoll.addEventListener("click", ()=>{
                         }, 0.15 * 2000)
                     }, 2000);
 
-                    plays = fails + wins;
+                    plays += 1;
 
                     if(plays === 4){
                         document.querySelector("div#warning").style.display = "flex";
